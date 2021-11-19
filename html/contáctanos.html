@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
+    <meta name="author" content="Israel Lemuel Sánchez Rangel">
+    <meta name="keywords" content="Radio,Emunah,Publicidad,">
+    <meta name="robots" content="index">
+    <title>Formulario Contáctanos Emunah</title>
+    <link rel="stylesheet" href="../css/contáctanos.css">
+    <link rel="stylesheet" href="../dark-mode/contactanos-dark.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="icon" href="../multimedia/Logo.ico">
+</head>
+<body>
+    <!--Comienza el Menu-->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="../multimedia/LOGO SOLO LETRAS.png" alt="">
+            </div>
+            <div class="icono" id=icono>
+                <span>&#9776;</span>
+            </div>
+            <div class="enlaces uno" id=enlaces>
+                <a href="../index.html"class="active">Inicio</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="contáctanos.html">Contáctanos</a>
+                <button class="switchDark active" id="switch">
+                    <span><i class='fas fa-sun' ></i></span>
+                    <span><i class='fas fa-moon' ></i></span>
+            </div>
+        </nav>
+    </header>
+    <!--Termina el Menu-->
+
+
+    
+    <form id="form" action="https://formspree.io/f/myylvqva"
+    method="POST">
+        <div class="form__container">
+            <h2 class="form__title">Contáctanos</h2>
+            <input type="text" class="form__input" placeholder="Nombre" name="name" required>
+            <input type="email" class="form__input" placeholder="Email" name="email" required>
+            <textarea class="form__input form__input--message" placeholder="Mensaje" name="message" required></textarea>
+            <input type="submit" value="Enviar" class="form__cta">
+            <script>
+                const $form = document.querySelector('#form')
+
+$form.addEventListener('submit',handleSubmit)
+
+async function handleSubmit(event){
+event.preventDefault()
+const form = new FormData(this)
+const response = await fetch(this.action, {
+     method: this.method,
+     body:form,
+     headers: {
+         'Accept': 'aplication/json'
+     }
+ })
+
+
+ if (response.ok) {
+    swal({
+title: "¡Gracias Por Contactarnos!",
+text: "¡Te Responderemos Lo Más Pronto Posible!",
+icon: "success",
+button: "Aceptar",
+
+});
+    this.reset()
+ }
+}
+            </script>
+        </div>
+    </form>
+    
+    <!-- Inicia Banner de Cookies -->
+
+	<div class="aviso-cookies" id="aviso-cookies">
+		<img class="galleta" src="../multimedia/cookie.svg" alt="Galleta">
+		<h3 class="titulo">Cookies</h3>
+		<p class="parrafo">Utilizamos cookies propias y de terceros para mejorar nuestros servicios.</p>
+		<button class="boton" id="btn-aceptar-cookies">De acuerdo</button>
+		<a target="blank" class="enlace" href="aviso-cookies-formulario.html">Aviso de Cookies</a>
+	</div>
+	<div class="fondo-aviso-cookies" id="fondo-aviso-cookies"></div>
+    <script>
+                const botonAceptarCookies = document.getElementById('btn-aceptar-cookies');
+const avisoCookies = document.getElementById('aviso-cookies');
+const fondoAvisoCookies = document.getElementById('fondo-aviso-cookies');
+
+dataLayer = [];
+
+if(!localStorage.getItem('cookies-aceptadas')){
+	avisoCookies.classList.add('activo');
+	fondoAvisoCookies.classList.add('activo');
+} else {
+	dataLayer.push({'event': 'cookies-aceptadas'});
+}
+
+botonAceptarCookies.addEventListener('click', () => {
+	avisoCookies.classList.remove('activo');
+	fondoAvisoCookies.classList.remove('activo');
+
+	localStorage.setItem('cookies-aceptadas', true);
+
+	dataLayer.push({'event': 'cookies-aceptadas'});
+});
+    </script>
+
+<div class="contenedor_loader">
+    <div class="loader"></div>
+</div> 
+<script>
+    window.addEventListener('load', () =>{
+const contenedor_loader = document.querySelector('.contenedor_loader')
+contenedor_loader.style.opacity = 0
+contenedor_loader.style.visibility = 'hidden'
+})   
+</script>
+<!--Comienza el Footer-->
+<footer class="pie-de-pagina">
+    <div class="grupo-1">
+        <div class="box">
+            <figure>
+                <a href="#">
+                    <img src="../multimedia/LOGO SOLO LETRAS.png" alt="Logo de Emunah">
+                </a>
+            </figure>
+        </div>
+        <div class="box">
+            <h2>
+                Sobre Nosotros
+            </h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, voluptates.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, suscipit?</p>
+        </div>
+        <div class="box">
+            <h2>
+                Síguenos
+            </h2>
+            <div class="red-social">
+                <a target="_blank" href="https://www.facebook.com/EmunahRadioytv" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin-in"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a target="_blank" href="https://www.youtube.com/channel/UCjuQ-62aBbGs1kAupOXzVDQ" class="fab fa-youtube"></a>
+            </div>
+        </div>
+    </div>
+    <div class="grupo-2">
+        <small>&copy; 2021 <b>EMUNAH</b> - Todos los Derechos Reservados.</small>
+    </div>
+</footer>
+</div>
+        <script src="../js/contáctanos.js"></script>
+</body>
+</html>
