@@ -418,11 +418,6 @@ body::-webkit-scrollbar-thumb {
     left: 10px;
 }
 
-@media screen and (max-width:953px){
-    .container-slider{
-        width: 100%;
-    }
-}
 .contenedor_loader{
     background-color: #f3f3f3;
     position: fixed;
@@ -433,49 +428,6 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.loader,
-.loader::before,
-.loader::after{
-    border-radius: 50%;
-    width: 2.5em;
-    height: 2.5em;
-    animation: loader 1.5s infinite ease-in-out;
-}
-
-.loader{
-    color: #FF8000;
-    font-size: 13px;
-    position: relative;
-    animation-delay: -0.16s;
-}
-
-.loader::before,
-.loader::after{
-    content: '';
-    position: absolute;
-    top: 0;
-}
-
-.loader::before{
-    left: -3.5em;
-    animation-delay: -0.32s;
-}
-
-.loader::after{
-    left: 3.5em;
-}
-
-
-@keyframes loader{
-    0%,
-    80%,
-    100%{
-        box-shadow: 0 2.5em 0 -1.3em;
-    }
-    40%{
-    box-shadow: 0 2.5em 0 0;
-}
 }
 
  /* Empieza El Footer */
@@ -548,6 +500,10 @@ body::-webkit-scrollbar-thumb {
     font-size: 20px;
 }
 
+.pie-de-pagina .grupo-1 .red-social a:hover{
+    color: #ffd792;
+}
+
 @media screen and (max-width:800px) {
     .pie-de-pagina .grupo-1{
         width: 100%;
@@ -557,6 +513,51 @@ body::-webkit-scrollbar-thumb {
     }
     
 }
+.loader,
+.loader::before,
+.loader::after{
+    border-radius: 50%;
+    width: 2.5em;
+    height: 2.5em;
+    animation: loader 1.5s infinite ease-in-out;
+}
+
+.loader{
+    color: #FF8000;
+    font-size: 13px;
+    position: relative;
+    animation-delay: -0.16s;
+}
+
+.loader::before,
+.loader::after{
+    content: '';
+    position: absolute;
+    top: 0;
+}
+
+.loader::before{
+    left: -3.5em;
+    animation-delay: -0.32s;
+}
+
+.loader::after{
+    left: 3.5em;
+}
+
+
+@keyframes loader{
+    0%,
+    80%,
+    100%{
+        box-shadow: 0 2.5em 0 -1.3em;
+    }
+    40%{
+    box-shadow: 0 2.5em 0 0;
+}
+}
+
+
 
 /*INICIO DE LAS CARD*/
 
@@ -674,11 +675,4 @@ body::-webkit-scrollbar-thumb {
 .c3:hover .icon{
     background: #FF8000;
 }
-
-
-
 /*FIN DE LAS CARD*/
-
-.pie-de-pagina .grupo-1 .red-social a:hover{
-    color: #ffd792;
-}
