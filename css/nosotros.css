@@ -374,6 +374,10 @@ body::-webkit-scrollbar-thumb {
     font-weight: 300px;
 }
 
+.text{
+    text-align: center;
+}
+
 .slider-section{
     position: initial;
     z-index: -1;
